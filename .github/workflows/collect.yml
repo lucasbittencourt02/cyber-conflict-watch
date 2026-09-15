@@ -2,6 +2,12 @@ name: Collect CTI Data
 
 on:
   workflow_dispatch:
+    inputs:
+      refresh_gdelt:
+        description: "Force a fresh GDELT query"
+        required: false
+        default: false
+        type: boolean
   schedule:
     - cron: "10 6,12,18,23 * * *"
       timezone: "America/Sao_Paulo"
@@ -25,8 +31,26 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Decide GDELT refresh mode
+        id: gdelt
+        shell: bash
+        run: |
+          HOUR=$(TZ=America/Sao_Paulo date +%H)
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.refresh_gdelt }}" == "true" ]]; then
+            echo "args=" >> "$GITHUB_OUTPUT"
+            echo "mode=fresh-forced" >> "$GITHUB_OUTPUT"
+          elif [[ "${{ github.event_name }}" == "schedule" && "$HOUR" == "06" ]]; then
+            echo "args=" >> "$GITHUB_OUTPUT"
+            echo "mode=fresh-daily" >> "$GITHUB_OUTPUT"
+          else
+            echo "args=--skip-gdelt" >> "$GITHUB_OUTPUT"
+            echo "mode=cache" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Run collectors
-        run: python collectors/collect.py
+        run: |
+          echo "GDELT mode: ${{ steps.gdelt.outputs.mode }}"
+          python collectors/collect.py ${{ steps.gdelt.outputs.args }}
 
       - name: Generate daily briefing
         run: python analysis/generate_daily.py
