@@ -1,0 +1,51 @@
+{
+  "project": "Cyber Conflict Watch",
+  "regions": [
+    {"name": "Israel", "code": "IL"},
+    {"name": "Palestinian Territories", "code": "PS"}
+  ],
+  "sources": [
+    {
+      "id": "dshield",
+      "type": "internet_scanning_baseline",
+      "authority": "community_telemetry",
+      "automated": true,
+      "confidence_role": "supporting"
+    },
+    {
+      "id": "gdelt",
+      "type": "open_media_context",
+      "authority": "aggregator",
+      "automated": true,
+      "confidence_role": "discovery"
+    },
+    {
+      "id": "incd_cert_il",
+      "name": "Israel National Cyber Directorate / CERT-IL",
+      "url": "https://www.gov.il/en/Departments/israel_national_cyber_directorate",
+      "type": "official_cyber_authority",
+      "authority": "primary",
+      "automated": false,
+      "confidence_role": "corroboration"
+    },
+    {
+      "id": "cloudflare_radar",
+      "name": "Cloudflare Radar",
+      "url": "https://radar.cloudflare.com/",
+      "type": "connectivity_outage",
+      "authority": "measurement",
+      "automated": false,
+      "requires_secret": "CLOUDFLARE_RADAR_TOKEN",
+      "confidence_role": "corroboration"
+    },
+    {
+      "id": "ripestat",
+      "name": "RIPEstat Data API",
+      "url": "https://stat.ripe.net/",
+      "type": "routing_bgp_context",
+      "authority": "measurement",
+      "automated": false,
+      "confidence_role": "corroboration"
+    }
+  ]
+}
