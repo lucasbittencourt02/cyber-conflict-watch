@@ -52,18 +52,21 @@ jobs:
           echo "GDELT mode: ${{ steps.gdelt.outputs.mode }}"
           python collectors/collect.py ${{ steps.gdelt.outputs.args }}
 
+      - name: Update historical baseline
+        run: python analysis/baseline.py
+
       - name: Generate daily briefing
         run: python analysis/generate_daily.py
 
-      - name: Commit collected data and report
+      - name: Commit collected data, baseline and report
         run: |
           git config user.name "Cyber Conflict Watch Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/daily/ reports/daily/
+          git add data/daily/ data/analysis/ reports/daily/
 
           if git diff --cached --quiet; then
-            echo "No new data or report changes to commit"
+            echo "No new data, baseline or report changes to commit"
           else
-            git commit -m "data: automated CTI collection and daily briefing"
+            git commit -m "data: automated CTI collection, baseline and daily briefing"
             git push
           fi
