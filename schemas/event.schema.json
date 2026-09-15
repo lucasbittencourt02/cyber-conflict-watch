@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lucasbittencourt02/cyber-conflict-watch/schemas/event.schema.json",
+  "title": "Cyber Conflict Watch Event",
+  "type": "object",
+  "required": ["id", "observed_at", "event_type", "status", "confidence", "title", "sources"],
+  "properties": {
+    "id": {"type": "string"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": ["string", "null"], "format": "date-time"},
+    "title": {"type": "string"},
+    "summary": {"type": "string"},
+    "event_type": {
+      "enum": ["ddos", "destructive", "intrusion", "phishing", "influence", "data_leak", "defacement", "connectivity", "scanning", "vulnerability", "other"]
+    },
+    "status": {"enum": ["OBSERVED", "CLAIMED", "CORROBORATED", "CONFIRMED", "DISPUTED"]},
+    "confidence": {"enum": ["LOW", "MEDIUM", "HIGH", "UNASSESSED"]},
+    "geography": {
+      "type": "object",
+      "properties": {
+        "country_or_territory": {"type": ["string", "null"]},
+        "location": {"type": ["string", "null"]}
+      }
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "organization": {"type": ["string", "null"]},
+        "sector": {"type": ["string", "null"]},
+        "domain": {"type": ["string", "null"]}
+      }
+    },
+    "claimed_actor": {"type": ["string", "null"]},
+    "ttps": {"type": "array", "items": {"type": "string"}},
+    "observables": {"type": "array", "items": {"type": "string"}},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_type", "reference"],
+        "properties": {
+          "source_type": {"enum": ["primary", "official", "measurement", "media", "claim", "community"]},
+          "reference": {"type": "string"},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "properties": {
+        "technical_evidence": {"type": "boolean"},
+        "independent_corroboration": {"type": "boolean"},
+        "official_confirmation": {"type": "boolean"},
+        "attribution_note": {"type": "string"},
+        "analyst_note": {"type": "string"}
+      }
+    }
+  }
+}
