@@ -28,15 +28,18 @@ jobs:
       - name: Run collectors
         run: python collectors/collect.py
 
-      - name: Commit collected data
+      - name: Generate daily briefing
+        run: python analysis/generate_daily.py
+
+      - name: Commit collected data and report
         run: |
           git config user.name "Cyber Conflict Watch Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/daily/
+          git add data/daily/ reports/daily/
 
           if git diff --cached --quiet; then
-            echo "No new data to commit"
+            echo "No new data or report changes to commit"
           else
-            git commit -m "data: automated CTI collection"
+            git commit -m "data: automated CTI collection and daily briefing"
             git push
           fi
