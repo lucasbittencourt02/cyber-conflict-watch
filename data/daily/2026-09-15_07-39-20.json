@@ -1,0 +1,53 @@
+{
+  "project": "Cyber Conflict Watch",
+  "version": "0.3.0",
+  "collected_at": "2026-09-15T07:39:20.185441+00:00",
+  "collection_health": {
+    "state": "degraded",
+    "successful_checks": 4,
+    "total_checks": 4,
+    "checks": {
+      "dshield_top_ports": true,
+      "dshield_top_ips": true,
+      "dshield_top_networks": true,
+      "gdelt_available": true
+    },
+    "gdelt_fresh": false
+  },
+  "methodology_notice": "Observed infrastructure, news reports and network telemetry do not by themselves establish attribution to a state, group or individual.",
+  "sources": {
+    "dshield": {
+      "top_ports": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "23\ttelnet\tTelnet\n443\thttps\tHTTP protocol over TLS SSL\n22\tssh\tSSH Remote Login Protocol\n80\twww\tWorld Wide Web HTTP\n2222\tssh\talternative ssh (Cowrie)\n8080\thttp-alt\tHTTP Alternate (see port 80)\n16767\t---\t---\n8000\tirdmi\tiRDMI\n853\ts\tDNS\n9000\tcslistener\tCSlistener\n"
+      },
+      "top_ips": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "23.94.68.19\t23-94-68-19-host.colocrossing.com.\n79.124.62.230\thosting-by.4cloud.mobi.\n79.124.62.134\thosting-by.4cloud.mobi.\n207.180.192.205\tm11005.contaboserver.net.\n79.124.62.126\thosting-by.4cloud.mobi.\n207.180.192.206\tm11006.contaboserver.net.\n5.189.160.21\tm4321.contaboserver.net.\n176.65.148.243\thosted-by.pfcloud.io.\n204.76.203.233\thosted-by.pfcloud.io.\n173.249.33.72\tm11372.contaboserver.net.\n193.46.255.51\thostingmailto200.statics.servermail.org.\n173.249.4.73\tm5483.contaboserver.net.\n62.167.236.39\t62-167-236-39.static.adslpremium.ch.\n89.248.163.200\trecyber.net.\n194.180.49.218\tTIMEOUT\n"
+      },
+      "top_networks": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "#\n#   DShield.org Recommended Block List \n#    (c) $year DShield.org\n#   some rights reserved. Details http://creativecommons.org/licenses/by-nc-sa/2.5/\n#   use on your own risk. No warranties implied.\n#   primary URL: https://feeds.dshield.org/block.txt\n#     PGP Sign.: https://feeds.dshield.org/block.txt.asc\n#\n#   comments: systems@isc.sans.edu\n#    updated: 2026-09-15T07:30:51.958986\n#   \n#    This list summarizes the top 20 attacking class C (/24) subnets\n#   over the last three days. The number of 'attacks' indicates the \n#   number of targets reporting scans from this subnet.\n#\n#\n#    Columns (tab delimited):\n#\n#    (1) start of netblock  \n#    (2) end of netblock\n#    (3) subnet (/24 for class C)\n#    (4) number of targets scanned\n#    (5) name of Network \n#    (6) Country\n#    (7) contact email address\n#\n#    If a range is assigned to multiple users, the first one is listed. \n#     \n156.225.1.0\t156.225.1.255\t24\t351\tOCTL-AS-AP OceanBlue Cloud Technology Limited\tHK\tsam.yang@oceanbluecloud.com\n64.62.156.0\t64.62.156.255\t24\t348\tHURRICANE\tUS\tabuse@he.net\n69.5.169.0\t69.5.169.255\t24\t344\tOMNIS\tUS\tabuse@omnis.com\n66.240.223.0\t66.240.223.255\t24\t342\tCARINET\tUS\tcomplaints@cari.net\n45.135.193.0\t45.135.193.255\t24\t339\t-\t-\t-\n64.62.197.0\t64.62.197.255\t24\t339\tHURRICANE\tUS\tabuse@he.net\n138.226.239.0\t138.226.239.255\t24\t338\t-\t-\t-\n213.209.159.0\t213.209.159.255\t24\t335\tAS43260\tTR\tip@dgn.net.tr\n77.239.124.0\t77.239.124.255\t24\t334\t-\t-\t-\n193.163.125.0\t193.163.125.255\t24\t334\tINTERNET-MEASUREMENT\tGB\t>>UNKNOWN<<\n185.242.226.0\t185.242.226.255\t24\t333\tAS49870-BV\tNL\tabuse@westcall.ru\n194.88.98.0\t194.88.98.255\t24\t333\tATT-INTERNET4\tUS\tabuse@att.net\n45.156.128.0\t45.156.128.255\t24\t331\tAS-BITSIGHT\tPT\t>>UNKNOWN<<\n66.132.186.0\t66.132.186.255\t24\t331\t-\t-\t-\n66.132.172.0\t66.132.172.255\t24\t330\t-\t-\t-\n167.94.145.0\t167.94.145.255\t24\t329\tCENSYS-ARIN-02\tUS\tNone\n66.132.195.0\t66.132.195.255\t24\t327\t-\t-\t-\n66.132.224.0\t66.132.224.255\t24\t326\t-\t-\t-\n77.90.185.0\t77.90.185.255\t24\t325\tBTHOSTER\tGB\tabuse@inetia.pl\n193.124.20.0\t193.124.20.255\t24\t325\tDTAG Internet service provider operations\tDE\tauftrag@nic.telekom.de\n"
+      }
+    },
+    "gdelt": {
+      "status": "cached",
+      "http_status": 200,
+      "article_count": 0,
+      "articles": [],
+      "topics": {
+        "cyber": [],
+        "connectivity": [],
+        "hacktivism": []
+      },
+      "fresh": false,
+      "cached_from": "2026-09-15_01-30-32.json",
+      "cached_collected_at": "2026-09-15T01:30:32.968362+00:00",
+      "cache_age_hours": 6.15,
+      "cache_reason": "scheduled reuse; fresh GDELT collection is limited to once daily"
+    }
+  }
+}

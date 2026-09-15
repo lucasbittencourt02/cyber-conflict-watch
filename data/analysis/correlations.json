@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-09-15T07:39:20.725148+00:00",
+  "engine_version": "0.1",
+  "status": "ok",
+  "connectivity": {
+    "available": false,
+    "source_file": "2026-09-15_07-39-20.json",
+    "source_status": "unavailable",
+    "regional_events": []
+  },
+  "tracked_events": [],
+  "correlations": [],
+  "methodology_notice": "Temporal or geographic correlation is supporting evidence only. It does not establish causality or actor attribution."
+}
