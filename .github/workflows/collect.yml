@@ -52,21 +52,29 @@ jobs:
           echo "GDELT mode: ${{ steps.gdelt.outputs.mode }}"
           python collectors/collect.py ${{ steps.gdelt.outputs.args }}
 
+      - name: Collect regional connectivity
+        env:
+          CLOUDFLARE_RADAR_TOKEN: ${{ secrets.CLOUDFLARE_RADAR_TOKEN }}
+        run: python collectors/connectivity.py
+
       - name: Update historical baseline
         run: python analysis/baseline.py
+
+      - name: Correlate CTI events
+        run: python analysis/correlate.py
 
       - name: Generate daily briefing
         run: python analysis/generate_daily.py
 
-      - name: Commit collected data, baseline and report
+      - name: Commit collected data, analysis and report
         run: |
           git config user.name "Cyber Conflict Watch Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/daily/ data/analysis/ reports/daily/
+          git add data/daily/ data/connectivity/ data/analysis/ reports/daily/
 
           if git diff --cached --quiet; then
-            echo "No new data, baseline or report changes to commit"
+            echo "No new data, analysis or report changes to commit"
           else
-            git commit -m "data: automated CTI collection, baseline and daily briefing"
+            git commit -m "data: automated CTI collection, correlation and briefing"
             git push
           fi
