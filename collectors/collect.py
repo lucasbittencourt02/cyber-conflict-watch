@@ -1,3 +1,4 @@
+import argparse
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -11,15 +12,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data" / "daily"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-USER_AGENT = "CyberConflictWatch/0.2 (+https://github.com/lucasbittencourt02/cyber-conflict-watch)"
+USER_AGENT = "CyberConflictWatch/0.3 (+https://github.com/lucasbittencourt02/cyber-conflict-watch)"
 
 retry_policy = Retry(
-    total=3,
-    connect=3,
-    read=3,
-    status=3,
-    backoff_factor=3,
-    status_forcelist=[429, 500, 502, 503, 504],
+    total=2,
+    connect=2,
+    read=2,
+    status=2,
+    backoff_factor=2,
+    status_forcelist=[500, 502, 503, 504],
     allowed_methods=frozenset(["GET"]),
     respect_retry_after_header=True,
     raise_on_status=False,
@@ -45,7 +46,14 @@ def fetch_text(url: str) -> dict:
 
 def fetch_json(url: str, params: dict) -> dict:
     try:
-        response = SESSION.get(url, params=params, timeout=90)
+        response = SESSION.get(url, params=params, timeout=60)
+        if response.status_code == 429:
+            return {
+                "status": "error",
+                "http_status": 429,
+                "error": "GDELT rate limit (HTTP 429)",
+                "retry_after": response.headers.get("Retry-After"),
+            }
         response.raise_for_status()
         return {
             "status": "ok",
@@ -62,21 +70,20 @@ def collect_dshield() -> dict:
         "top_ips": "https://feeds.dshield.org/feeds/topips.txt",
         "top_networks": "https://feeds.dshield.org/feeds/block.txt",
     }
-
     return {name: fetch_text(url) for name, url in feeds.items()}
 
 
 def classify_gdelt_articles(response: dict) -> dict:
     if response.get("status") != "ok":
         return {
-            "status": response.get("status", "error"),
+            "status": "error",
+            "http_status": response.get("http_status"),
             "error": response.get("error", "GDELT request failed"),
             "articles": [],
             "topics": {},
         }
 
     articles = response.get("data", {}).get("articles", [])
-
     topics = {
         "cyber": [],
         "connectivity": [],
@@ -103,13 +110,13 @@ def classify_gdelt_articles(response: dict) -> dict:
             str(article.get(field, ""))
             for field in ("title", "url", "domain")
         ).lower()
-
         for topic, terms in keywords.items():
             if any(term in searchable for term in terms):
                 topics[topic].append(article)
 
     return {
         "status": "ok",
+        "fresh": True,
         "http_status": response.get("http_status"),
         "article_count": len(articles),
         "articles": articles,
@@ -117,45 +124,94 @@ def classify_gdelt_articles(response: dict) -> dict:
     }
 
 
-def collect_gdelt() -> dict:
-    endpoint = "https://api.gdeltproject.org/api/v2/doc/doc"
+def latest_gdelt_cache(now: datetime, max_age_hours: float = 36.0) -> dict | None:
+    for path in sorted(DATA_DIR.glob("*.json"), reverse=True):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            collected_at = datetime.fromisoformat(payload["collected_at"])
+            age_hours = (now - collected_at).total_seconds() / 3600
+            if age_hours > max_age_hours:
+                continue
 
-    # One broad request per collection run. This is intentionally kept to a
-    # single GDELT request to be friendly to the public API and reduce HTTP 429s.
+            gdelt = payload.get("sources", {}).get("gdelt", {})
+            if gdelt.get("status") == "ok":
+                cached = dict(gdelt)
+                cached["status"] = "cached"
+                cached["fresh"] = False
+                cached["cached_from"] = path.name
+                cached["cached_collected_at"] = payload.get("collected_at")
+                cached["cache_age_hours"] = round(age_hours, 2)
+                return cached
+        except Exception:
+            continue
+    return None
+
+
+def collect_gdelt(now: datetime, skip: bool = False) -> dict:
+    cache = latest_gdelt_cache(now)
+
+    if skip:
+        if cache:
+            cache["cache_reason"] = "scheduled reuse; fresh GDELT collection is limited to once daily"
+            return cache
+        return {
+            "status": "unavailable",
+            "fresh": False,
+            "error": "GDELT refresh skipped and no valid cache is available",
+            "articles": [],
+            "topics": {},
+        }
+
+    endpoint = "https://api.gdeltproject.org/api/v2/doc/doc"
     query = (
         '(Israel OR Palestine OR Gaza) '
         '(cyber OR cyberattack OR hacking OR DDoS OR malware OR phishing OR '
         'hacktivist OR hacktivism OR "internet outage" OR telecommunications OR blackout)'
     )
-
     params = {
         "query": query,
         "mode": "ArtList",
         "format": "json",
-        "maxrecords": 75,
+        "maxrecords": 50,
         "timespan": "1d",
         "sort": "HybridRel",
     }
 
-    response = fetch_json(endpoint, params)
-    return classify_gdelt_articles(response)
+    result = classify_gdelt_articles(fetch_json(endpoint, params))
+    if result.get("status") == "ok":
+        return result
+
+    if cache:
+        cache["cache_reason"] = "fresh GDELT request failed; using last valid result"
+        cache["upstream_error"] = result.get("error")
+        cache["upstream_http_status"] = result.get("http_status")
+        return cache
+
+    return result
 
 
 def determine_health(dshield: dict, gdelt: dict) -> dict:
-    checks = {
+    dshield_checks = {
         "dshield_top_ports": dshield.get("top_ports", {}).get("status") == "ok",
         "dshield_top_ips": dshield.get("top_ips", {}).get("status") == "ok",
         "dshield_top_networks": dshield.get("top_networks", {}).get("status") == "ok",
-        "gdelt": gdelt.get("status") == "ok",
+    }
+
+    gdelt_status = gdelt.get("status")
+    checks = {
+        **dshield_checks,
+        "gdelt_available": gdelt_status in {"ok", "cached"},
     }
 
     successful = sum(checks.values())
     total = len(checks)
 
-    if successful == total:
-        state = "healthy"
-    elif successful == 0:
+    if not any(dshield_checks.values()) and not checks["gdelt_available"]:
         state = "failed"
+    elif all(dshield_checks.values()) and gdelt_status == "ok":
+        state = "healthy"
+    elif all(dshield_checks.values()) and gdelt_status == "cached":
+        state = "degraded"
     else:
         state = "partial"
 
@@ -164,19 +220,27 @@ def determine_health(dshield: dict, gdelt: dict) -> dict:
         "successful_checks": successful,
         "total_checks": total,
         "checks": checks,
+        "gdelt_fresh": gdelt_status == "ok",
     }
 
 
 def main() -> None:
-    now = datetime.now(timezone.utc)
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--skip-gdelt",
+        action="store_true",
+        help="Reuse the most recent valid GDELT result instead of querying the API.",
+    )
+    args = parser.parse_args()
 
+    now = datetime.now(timezone.utc)
     dshield = collect_dshield()
-    gdelt = collect_gdelt()
+    gdelt = collect_gdelt(now, skip=args.skip_gdelt)
     health = determine_health(dshield, gdelt)
 
     payload = {
         "project": "Cyber Conflict Watch",
-        "version": "0.2.0",
+        "version": "0.3.0",
         "collected_at": now.isoformat(),
         "collection_health": health,
         "methodology_notice": (
@@ -190,19 +254,14 @@ def main() -> None:
     }
 
     output = DATA_DIR / now.strftime("%Y-%m-%d_%H-%M-%S.json")
-    output.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    output.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(f"[+] Collection saved: {output}")
     print(
         "[+] Collection health: "
         f"{health['state']} ({health['successful_checks']}/{health['total_checks']})"
     )
-
-    if health["state"] != "healthy":
-        print("[!] One or more sources were unavailable; partial data was preserved.")
+    print(f"[+] GDELT status: {gdelt.get('status')} | fresh={gdelt.get('fresh', False)}")
 
 
 if __name__ == "__main__":
