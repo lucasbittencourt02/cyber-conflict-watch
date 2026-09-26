@@ -1,0 +1,44 @@
+{
+  "project": "Cyber Conflict Watch",
+  "version": "0.3.0",
+  "collected_at": "2026-09-26T23:32:48.826977+00:00",
+  "collection_health": {
+    "state": "partial",
+    "successful_checks": 3,
+    "total_checks": 4,
+    "checks": {
+      "dshield_top_ports": true,
+      "dshield_top_ips": true,
+      "dshield_top_networks": true,
+      "gdelt_available": false
+    },
+    "gdelt_fresh": false
+  },
+  "methodology_notice": "Observed infrastructure, news reports and network telemetry do not by themselves establish attribution to a state, group or individual.",
+  "sources": {
+    "dshield": {
+      "top_ports": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "22\tssh\tSSH Remote Login Protocol\n23\ttelnet\tTelnet\n80\twww\tWorld Wide Web HTTP\n8080\thttp-alt\tHTTP Alternate (see port 80)\n8000\tirdmi\tiRDMI\n443\thttps\tHTTP protocol over TLS SSL\n2222\tssh\talternative ssh (Cowrie)\n9000\tcslistener\tCSlistener\n7547\tTR069\tRouter Remote Admin\n16767\t---\t---\n"
+      },
+      "top_ips": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "23.94.68.19\t23-94-68-19-host.colocrossing.com.\n79.124.62.230\thosting-by.4cloud.mobi.\n79.124.62.134\thosting-by.4cloud.mobi.\n207.180.192.205\tm11005.contaboserver.net.\n79.124.62.126\thosting-by.4cloud.mobi.\n207.180.192.206\tm11006.contaboserver.net.\n5.189.160.21\tm4321.contaboserver.net.\n173.249.33.72\tm11372.contaboserver.net.\n193.46.255.51\thostingmailto200.statics.servermail.org.\n173.249.4.73\tm5483.contaboserver.net.\n62.167.236.39\t62-167-236-39.static.adslpremium.ch.\n89.248.163.200\trecyber.net.\n194.180.49.218\tTIMEOUT\n"
+      },
+      "top_networks": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "#\n#   DShield.org Recommended Block List \n#    (c) $year DShield.org\n#   some rights reserved. Details http://creativecommons.org/licenses/by-nc-sa/2.5/\n#   use on your own risk. No warranties implied.\n#   primary URL: https://feeds.dshield.org/block.txt\n#     PGP Sign.: https://feeds.dshield.org/block.txt.asc\n#\n#   comments: systems@isc.sans.edu\n#    updated: 2026-09-26T23:30:31.619023\n#   \n#    This list summarizes the top 20 attacking class C (/24) subnets\n#   over the last three days. The number of 'attacks' indicates the \n#   number of targets reporting scans from this subnet.\n#\n#\n#    Columns (tab delimited):\n#\n#    (1) start of netblock  \n#    (2) end of netblock\n#    (3) subnet (/24 for class C)\n#    (4) number of targets scanned\n#    (5) name of Network \n#    (6) Country\n#    (7) contact email address\n#\n#    If a range is assigned to multiple users, the first one is listed. \n#     \n66.132.195.0\t66.132.195.255\t24\t300\t-\t-\t-\n65.49.1.0\t65.49.1.255\t24\t295\tHURRICANE\tUS\tabuse@he.net\n172.110.223.0\t172.110.223.255\t24\t286\t-\t-\t-\n138.226.239.0\t138.226.239.255\t24\t283\t-\t-\t-\n66.132.186.0\t66.132.186.255\t24\t281\t-\t-\t-\n66.132.224.0\t66.132.224.255\t24\t281\t-\t-\t-\n85.217.149.0\t85.217.149.255\t24\t281\tMAYAK\tBG\tripe@mayak.bg\n89.21.67.0\t89.21.67.255\t24\t280\tBANDWIDTH-AS\tGB\tabuse@zare.com\n199.45.154.0\t199.45.154.255\t24\t280\tCENSYS-ARIN-03\tUS\tNone\n64.62.156.0\t64.62.156.255\t24\t279\tHURRICANE\tUS\tabuse@he.net\n185.242.226.0\t185.242.226.255\t24\t279\tAS49870-BV\tNL\tabuse@westcall.ru\n148.59.129.0\t148.59.129.255\t24\t278\tSERVER-MANIA\tCA\tsupport@servermania.com\n185.223.235.0\t185.223.235.255\t24\t278\tBANDWIDTH-AS\tGB\tabuse@zare.com\n16.5.0.0\t16.5.0.255\t24\t277\t-\t-\t-\n81.19.216.0\t81.19.216.255\t24\t276\tBANDWIDTH-AS\tGB\tabuse@zare.com\n193.176.31.0\t193.176.31.255\t24\t276\tBANDWIDTH-AS\tGB\tabuse@zare.com\n64.62.197.0\t64.62.197.255\t24\t275\tHURRICANE\tUS\tabuse@he.net\n45.133.173.0\t45.133.173.255\t24\t274\tCOGENT-174\tUS\tabuse@cogentco.com\n66.132.172.0\t66.132.172.255\t24\t274\t-\t-\t-\n167.94.146.0\t167.94.146.255\t24\t274\tCENSYS-ARIN-02\tUS\tNone\n"
+      }
+    },
+    "gdelt": {
+      "status": "unavailable",
+      "fresh": false,
+      "error": "GDELT refresh skipped and no valid cache is available",
+      "articles": [],
+      "topics": {}
+    }
+  }
+}
