@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-04T23:56:30.794963+00:00",
+  "generated_at": "2026-10-05T08:53:26.783106+00:00",
   "engine_version": "0.1",
   "status": "ok",
   "connectivity": {
     "available": false,
-    "source_file": "2026-10-04_23-56-30.json",
+    "source_file": "2026-10-05_08-53-26.json",
     "source_status": "unavailable",
     "regional_events": []
   },
