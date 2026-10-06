@@ -1,0 +1,44 @@
+{
+  "project": "Cyber Conflict Watch",
+  "version": "0.3.0",
+  "collected_at": "2026-10-06T08:53:47.329722+00:00",
+  "collection_health": {
+    "state": "partial",
+    "successful_checks": 3,
+    "total_checks": 4,
+    "checks": {
+      "dshield_top_ports": true,
+      "dshield_top_ips": true,
+      "dshield_top_networks": true,
+      "gdelt_available": false
+    },
+    "gdelt_fresh": false
+  },
+  "methodology_notice": "Observed infrastructure, news reports and network telemetry do not by themselves establish attribution to a state, group or individual.",
+  "sources": {
+    "dshield": {
+      "top_ports": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "80\twww\tWorld Wide Web HTTP\n22\tssh\tSSH Remote Login Protocol\n23\ttelnet\tTelnet\n8080\thttp-alt\tHTTP Alternate (see port 80)\n443\thttps\tHTTP protocol over TLS SSL\n8000\tirdmi\tiRDMI\n2222\tssh\talternative ssh (Cowrie)\n853\ts\tDNS\n9000\tcslistener\tCSlistener\n7547\tTR069\tRouter Remote Admin\n"
+      },
+      "top_ips": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "23.94.68.19\t23-94-68-19-host.colocrossing.com.\n79.124.62.230\thosting-by.4cloud.mobi.\n204.76.203.212\thosted-by.pfcloud.io.\n79.124.62.134\thosting-by.4cloud.mobi.\n3.131.209.36\tec2-3-131-209-36.us-east-2.compute.amazonaws.com.\n204.236.133.68\tec2-204-236-133-68.us-west-1.compute.amazonaws.com.\n207.180.192.205\tm11005.contaboserver.net.\n79.124.62.126\thosting-by.4cloud.mobi.\n207.180.192.206\tm11006.contaboserver.net.\n5.189.160.21\tm4321.contaboserver.net.\n173.249.33.72\tm11372.contaboserver.net.\n193.46.255.51\thostingmailto200.statics.servermail.org.\n173.249.4.73\tm5483.contaboserver.net.\n62.167.236.39\t62-167-236-39.static.adslpremium.ch.\n89.248.163.200\trecyber.net.\n194.180.49.218\tTIMEOUT\n"
+      },
+      "top_networks": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "#\n#   DShield.org Recommended Block List \n#    (c) $year DShield.org\n#   some rights reserved. Details http://creativecommons.org/licenses/by-nc-sa/2.5/\n#   use on your own risk. No warranties implied.\n#   primary URL: https://feeds.dshield.org/block.txt\n#     PGP Sign.: https://feeds.dshield.org/block.txt.asc\n#\n#   comments: systems@isc.sans.edu\n#    updated: 2026-10-06T08:01:03.541430\n#   \n#    This list summarizes the top 20 attacking class C (/24) subnets\n#   over the last three days. The number of 'attacks' indicates the \n#   number of targets reporting scans from this subnet.\n#\n#\n#    Columns (tab delimited):\n#\n#    (1) start of netblock  \n#    (2) end of netblock\n#    (3) subnet (/24 for class C)\n#    (4) number of targets scanned\n#    (5) name of Network \n#    (6) Country\n#    (7) contact email address\n#\n#    If a range is assigned to multiple users, the first one is listed. \n#     \n66.132.186.0\t66.132.186.255\t24\t341\t-\t-\t-\n160.119.76.0\t160.119.76.255\t24\t341\t-\t-\t-\n156.225.1.0\t156.225.1.255\t24\t339\tOCTL-AS-AP OceanBlue Cloud Technology Limited\tHK\tsam.yang@oceanbluecloud.com\n66.240.223.0\t66.240.223.255\t24\t338\tCARINET\tUS\tcomplaints@cari.net\n85.217.149.0\t85.217.149.255\t24\t338\tMAYAK\tBG\tripe@mayak.bg\n185.136.15.0\t185.136.15.255\t24\t338\tSOLUTIONS-FACTORY-AS\tKZ\tinfo@datixgroup.net\n66.132.195.0\t66.132.195.255\t24\t337\t-\t-\t-\n167.94.145.0\t167.94.145.255\t24\t336\tCENSYS-ARIN-02\tUS\tNone\n45.198.224.0\t45.198.224.255\t24\t335\tOWS\tUS\tCSOC@ontario.ca\n199.45.154.0\t199.45.154.255\t24\t333\tCENSYS-ARIN-03\tUS\tNone\n198.235.24.0\t198.235.24.255\t24\t331\tGOOGLE-CLOUD-PLATFORM\tUS\tNone\n66.132.172.0\t66.132.172.255\t24\t330\t-\t-\t-\n205.210.31.0\t205.210.31.255\t24\t328\tGOOGLE-CLOUD-PLATFORM\tUS\tNone\n64.62.197.0\t64.62.197.255\t24\t327\tHURRICANE\tUS\tabuse@he.net\n45.148.10.0\t45.148.10.255\t24\t326\tPPTECHNOLOGY\tGB\tabuse@vegatele.com\n85.217.140.0\t85.217.140.255\t24\t326\tNETERRA-AS\tBG\tabuse@neterra.net\n45.205.1.0\t45.205.1.255\t24\t325\tMULTA-ASN1\tUS\tabuse@multacom.com\n193.163.125.0\t193.163.125.255\t24\t325\tINTERNET-MEASUREMENT\tGB\t>>UNKNOWN<<\n216.180.246.0\t216.180.246.255\t24\t323\tNTHL\tUS\tabuse@networktransit.net\n94.154.43.0\t94.154.43.255\t24\t322\tEKSENBILISIM\tTR\tabuse@ruyaserver.com\n"
+      }
+    },
+    "gdelt": {
+      "status": "unavailable",
+      "fresh": false,
+      "error": "GDELT refresh skipped and no valid cache is available",
+      "articles": [],
+      "topics": {}
+    }
+  }
+}
