@@ -1,83 +1,98 @@
 {
-  "generated_at": "2026-10-07T16:23:45.181412+00:00",
-  "usable_collections": 87,
+  "generated_at": "2026-10-08T00:56:16.499683+00:00",
+  "usable_collections": 88,
   "baseline_maturity": "minimum_7_day_baseline",
   "note": "Presence frequency is a baseline feature, not a maliciousness or attribution score.",
   "top_port_presence": [
     {
-      "value": "23",
-      "collections_present": 87,
+      "value": "443",
+      "collections_present": 88,
       "presence_ratio": 1.0
     },
     {
       "value": "22",
-      "collections_present": 87,
+      "collections_present": 88,
+      "presence_ratio": 1.0
+    },
+    {
+      "value": "23",
+      "collections_present": 88,
       "presence_ratio": 1.0
     },
     {
       "value": "8080",
-      "collections_present": 87,
+      "collections_present": 88,
       "presence_ratio": 1.0
-    },
-    {
-      "value": "443",
-      "collections_present": 87,
-      "presence_ratio": 1.0
-    },
-    {
-      "value": "80",
-      "collections_present": 84,
-      "presence_ratio": 0.966
     },
     {
       "value": "2222",
-      "collections_present": 84,
+      "collections_present": 85,
+      "presence_ratio": 0.966
+    },
+    {
+      "value": "80",
+      "collections_present": 85,
       "presence_ratio": 0.966
     },
     {
       "value": "8000",
-      "collections_present": 79,
-      "presence_ratio": 0.908
+      "collections_present": 80,
+      "presence_ratio": 0.909
     },
     {
       "value": "16767",
       "collections_present": 76,
-      "presence_ratio": 0.874
+      "presence_ratio": 0.864
     },
     {
       "value": "853",
       "collections_present": 43,
-      "presence_ratio": 0.494
+      "presence_ratio": 0.489
     },
     {
       "value": "9000",
-      "collections_present": 42,
-      "presence_ratio": 0.483
+      "collections_present": 43,
+      "presence_ratio": 0.489
     },
     {
       "value": "7547",
       "collections_present": 34,
-      "presence_ratio": 0.391
+      "presence_ratio": 0.386
     },
     {
       "value": "445",
-      "collections_present": 18,
-      "presence_ratio": 0.207
+      "collections_present": 19,
+      "presence_ratio": 0.216
     },
     {
       "value": "6881",
       "collections_present": 17,
-      "presence_ratio": 0.195
+      "presence_ratio": 0.193
     },
     {
       "value": "7680",
       "collections_present": 11,
-      "presence_ratio": 0.126
+      "presence_ratio": 0.125
     },
     {
       "value": "51413",
       "collections_present": 6,
-      "presence_ratio": 0.069
+      "presence_ratio": 0.068
+    },
+    {
+      "value": "53",
+      "collections_present": 3,
+      "presence_ratio": 0.034
+    },
+    {
+      "value": "8088",
+      "collections_present": 3,
+      "presence_ratio": 0.034
+    },
+    {
+      "value": "389",
+      "collections_present": 3,
+      "presence_ratio": 0.034
     },
     {
       "value": "8081",
@@ -88,215 +103,200 @@
       "value": "3389",
       "collections_present": 3,
       "presence_ratio": 0.034
-    },
-    {
-      "value": "53",
-      "collections_present": 3,
-      "presence_ratio": 0.034
-    },
-    {
-      "value": "2375",
-      "collections_present": 3,
-      "presence_ratio": 0.034
-    },
-    {
-      "value": "389",
-      "collections_present": 3,
-      "presence_ratio": 0.034
     }
   ],
   "top_ip_presence": [
     {
-      "value": "62.167.236.39",
-      "collections_present": 87,
-      "presence_ratio": 1.0
-    },
-    {
-      "value": "207.180.192.205",
-      "collections_present": 87,
-      "presence_ratio": 1.0
-    },
-    {
-      "value": "79.124.62.230",
-      "collections_present": 87,
-      "presence_ratio": 1.0
-    },
-    {
-      "value": "79.124.62.126",
-      "collections_present": 87,
-      "presence_ratio": 1.0
-    },
-    {
-      "value": "193.46.255.51",
-      "collections_present": 87,
+      "value": "173.249.33.72",
+      "collections_present": 88,
       "presence_ratio": 1.0
     },
     {
       "value": "79.124.62.134",
-      "collections_present": 87,
+      "collections_present": 88,
       "presence_ratio": 1.0
     },
     {
-      "value": "173.249.4.73",
-      "collections_present": 87,
+      "value": "193.46.255.51",
+      "collections_present": 88,
+      "presence_ratio": 1.0
+    },
+    {
+      "value": "62.167.236.39",
+      "collections_present": 88,
       "presence_ratio": 1.0
     },
     {
       "value": "5.189.160.21",
-      "collections_present": 87,
+      "collections_present": 88,
       "presence_ratio": 1.0
     },
     {
-      "value": "173.249.33.72",
-      "collections_present": 87,
+      "value": "79.124.62.230",
+      "collections_present": 88,
       "presence_ratio": 1.0
     },
     {
-      "value": "23.94.68.19",
-      "collections_present": 87,
-      "presence_ratio": 1.0
-    },
-    {
-      "value": "207.180.192.206",
-      "collections_present": 87,
+      "value": "79.124.62.126",
+      "collections_present": 88,
       "presence_ratio": 1.0
     },
     {
       "value": "89.248.163.200",
-      "collections_present": 87,
+      "collections_present": 88,
+      "presence_ratio": 1.0
+    },
+    {
+      "value": "207.180.192.205",
+      "collections_present": 88,
+      "presence_ratio": 1.0
+    },
+    {
+      "value": "173.249.4.73",
+      "collections_present": 88,
+      "presence_ratio": 1.0
+    },
+    {
+      "value": "207.180.192.206",
+      "collections_present": 88,
+      "presence_ratio": 1.0
+    },
+    {
+      "value": "23.94.68.19",
+      "collections_present": 88,
       "presence_ratio": 1.0
     },
     {
       "value": "194.180.49.218",
-      "collections_present": 83,
-      "presence_ratio": 0.954
+      "collections_present": 84,
+      "presence_ratio": 0.955
     },
     {
       "value": "176.65.148.243",
       "collections_present": 40,
-      "presence_ratio": 0.46
+      "presence_ratio": 0.455
     },
     {
       "value": "204.76.203.212",
-      "collections_present": 23,
-      "presence_ratio": 0.264
+      "collections_present": 24,
+      "presence_ratio": 0.273
     },
     {
       "value": "204.236.133.68",
       "collections_present": 18,
-      "presence_ratio": 0.207
+      "presence_ratio": 0.205
     },
     {
       "value": "3.131.209.36",
       "collections_present": 18,
-      "presence_ratio": 0.207
+      "presence_ratio": 0.205
     },
     {
       "value": "204.76.203.233",
       "collections_present": 13,
-      "presence_ratio": 0.149
+      "presence_ratio": 0.148
     }
   ],
   "top_network_presence": [
     {
       "value": "66.132.172.0/24",
-      "collections_present": 85,
+      "collections_present": 86,
       "presence_ratio": 0.977
     },
     {
-      "value": "193.163.125.0/24",
-      "collections_present": 84,
+      "value": "64.62.197.0/24",
+      "collections_present": 85,
       "presence_ratio": 0.966
     },
     {
-      "value": "64.62.197.0/24",
-      "collections_present": 84,
+      "value": "193.163.125.0/24",
+      "collections_present": 85,
       "presence_ratio": 0.966
     },
     {
       "value": "66.132.186.0/24",
-      "collections_present": 76,
-      "presence_ratio": 0.874
+      "collections_present": 77,
+      "presence_ratio": 0.875
     },
     {
       "value": "148.59.129.0/24",
-      "collections_present": 68,
-      "presence_ratio": 0.782
+      "collections_present": 69,
+      "presence_ratio": 0.784
     },
     {
       "value": "205.210.31.0/24",
-      "collections_present": 65,
-      "presence_ratio": 0.747
+      "collections_present": 66,
+      "presence_ratio": 0.75
     },
     {
       "value": "198.235.24.0/24",
-      "collections_present": 61,
-      "presence_ratio": 0.701
+      "collections_present": 62,
+      "presence_ratio": 0.705
+    },
+    {
+      "value": "147.185.132.0/24",
+      "collections_present": 60,
+      "presence_ratio": 0.682
     },
     {
       "value": "66.132.195.0/24",
       "collections_present": 59,
-      "presence_ratio": 0.678
-    },
-    {
-      "value": "147.185.132.0/24",
-      "collections_present": 59,
-      "presence_ratio": 0.678
+      "presence_ratio": 0.67
     },
     {
       "value": "64.62.156.0/24",
-      "collections_present": 57,
-      "presence_ratio": 0.655
+      "collections_present": 58,
+      "presence_ratio": 0.659
     },
     {
       "value": "69.5.169.0/24",
-      "collections_present": 56,
-      "presence_ratio": 0.644
+      "collections_present": 57,
+      "presence_ratio": 0.648
     },
     {
       "value": "85.217.149.0/24",
-      "collections_present": 55,
-      "presence_ratio": 0.632
+      "collections_present": 56,
+      "presence_ratio": 0.636
     },
     {
       "value": "65.49.1.0/24",
-      "collections_present": 55,
-      "presence_ratio": 0.632
+      "collections_present": 56,
+      "presence_ratio": 0.636
     },
     {
       "value": "77.90.185.0/24",
       "collections_present": 49,
-      "presence_ratio": 0.563
+      "presence_ratio": 0.557
     },
     {
       "value": "45.148.10.0/24",
-      "collections_present": 48,
-      "presence_ratio": 0.552
+      "collections_present": 49,
+      "presence_ratio": 0.557
     },
     {
       "value": "216.180.246.0/24",
-      "collections_present": 45,
-      "presence_ratio": 0.517
+      "collections_present": 46,
+      "presence_ratio": 0.523
     },
     {
       "value": "199.45.154.0/24",
       "collections_present": 45,
-      "presence_ratio": 0.517
+      "presence_ratio": 0.511
     },
     {
       "value": "77.239.124.0/24",
       "collections_present": 44,
-      "presence_ratio": 0.506
+      "presence_ratio": 0.5
     },
     {
       "value": "85.217.140.0/24",
       "collections_present": 42,
-      "presence_ratio": 0.483
+      "presence_ratio": 0.477
     },
     {
       "value": "172.110.223.0/24",
       "collections_present": 41,
-      "presence_ratio": 0.471
+      "presence_ratio": 0.466
     }
   ]
 }
