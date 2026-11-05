@@ -1,0 +1,216 @@
+{
+  "project": "Cyber Conflict Watch",
+  "version": "0.3.0",
+  "collected_at": "2026-11-05T01:26:08.908025+00:00",
+  "collection_health": {
+    "state": "degraded",
+    "successful_checks": 4,
+    "total_checks": 4,
+    "checks": {
+      "dshield_top_ports": true,
+      "dshield_top_ips": true,
+      "dshield_top_networks": true,
+      "gdelt_available": true
+    },
+    "gdelt_fresh": false
+  },
+  "methodology_notice": "Observed infrastructure, news reports and network telemetry do not by themselves establish attribution to a state, group or individual.",
+  "sources": {
+    "dshield": {
+      "top_ports": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "22\tssh\tSSH Remote Login Protocol\n23\ttelnet\tTelnet\n443\thttps\tHTTP protocol over TLS SSL\n80\twww\tWorld Wide Web HTTP\n8080\thttp-alt\tHTTP Alternate (see port 80)\n8000\tirdmi\tiRDMI\n2222\tssh\talternative ssh (Cowrie)\n54321\tBackOrifice2000\t[trojan] Back Orifice 2000\n53\tdomain\tDomain Name Server\n9000\tcslistener\tCSlistener\n"
+      },
+      "top_ips": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "23.94.68.19\t23-94-68-19-host.colocrossing.com.\n79.124.62.230\thosting-by.4cloud.mobi.\n204.76.203.212\thosted-by.pfcloud.io.\n79.124.62.134\thosting-by.4cloud.mobi.\n207.180.192.205\tm11005.contaboserver.net.\n79.124.62.126\thosting-by.4cloud.mobi.\n207.180.192.206\tm11006.contaboserver.net.\n5.189.160.21\tm4321.contaboserver.net.\n173.249.33.72\tm11372.contaboserver.net.\n193.46.255.51\thostingmailto200.statics.servermail.org.\n173.249.4.73\tm5483.contaboserver.net.\n62.167.236.39\t62-167-236-39.static.adslpremium.ch.\n89.248.163.200\trecyber.net.\n177.129.99.94\tmail.oticasvisao.net.br.\n194.180.49.217\tTIMEOUT\n"
+      },
+      "top_networks": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "#\n#   DShield.org Recommended Block List \n#    (c) $year DShield.org\n#   some rights reserved. Details http://creativecommons.org/licenses/by-nc-sa/2.5/\n#   use on your own risk. No warranties implied.\n#   primary URL: https://feeds.dshield.org/block.txt\n#     PGP Sign.: https://feeds.dshield.org/block.txt.asc\n#\n#   comments: systems@isc.sans.edu\n#    updated: 2026-11-05T01:15:43.055855\n#   \n#    This list summarizes the top 20 attacking class C (/24) subnets\n#   over the last three days. The number of 'attacks' indicates the \n#   number of targets reporting scans from this subnet.\n#\n#\n#    Columns (tab delimited):\n#\n#    (1) start of netblock  \n#    (2) end of netblock\n#    (3) subnet (/24 for class C)\n#    (4) number of targets scanned\n#    (5) name of Network \n#    (6) Country\n#    (7) contact email address\n#\n#    If a range is assigned to multiple users, the first one is listed. \n#     \n65.49.1.0\t65.49.1.255\t24\t360\tHURRICANE\tUS\tabuse@he.net\n198.235.24.0\t198.235.24.255\t24\t352\tGOOGLE-CLOUD-PLATFORM\tUS\tNone\n151.243.11.0\t151.243.11.255\t24\t347\tRASANA\tIR\tabuse@rasana.net\n66.132.186.0\t66.132.186.255\t24\t346\t-\t-\t-\n66.132.195.0\t66.132.195.255\t24\t343\t-\t-\t-\n156.225.1.0\t156.225.1.255\t24\t343\tOCTL-AS-AP OceanBlue Cloud Technology Limited\tHK\tsam.yang@oceanbluecloud.com\n205.210.31.0\t205.210.31.255\t24\t343\tGOOGLE-CLOUD-PLATFORM\tUS\tNone\n66.33.23.0\t66.33.23.255\t24\t341\t-\t-\t-\n66.33.22.0\t66.33.22.255\t24\t339\t-\t-\t-\n69.46.46.0\t69.46.46.255\t24\t339\tMPDCOL\tUS\tabuse@bytegrid.com\n138.226.239.0\t138.226.239.255\t24\t339\t-\t-\t-\n91.196.152.0\t91.196.152.255\t24\t338\tATT-INTERNET4\tUS\tabuse@att.net\n195.182.16.0\t195.182.16.255\t24\t337\tOT2-AS\tUA\tabuse@omegatelecom.ua\n64.62.197.0\t64.62.197.255\t24\t335\tHURRICANE\tUS\tabuse@he.net\n193.47.62.0\t193.47.62.255\t24\t335\tASN-QUADRANET-GLOBAL\tUS\tsupport@quadranet.com\n216.180.246.0\t216.180.246.255\t24\t335\tNTHL\tUS\tabuse@networktransit.net\n45.198.224.0\t45.198.224.255\t24\t334\tOWS\tUS\tCSOC@ontario.ca\n66.132.172.0\t66.132.172.255\t24\t334\t-\t-\t-\n77.239.124.0\t77.239.124.255\t24\t334\t-\t-\t-\n167.94.145.0\t167.94.145.255\t24\t333\tCENSYS-ARIN-02\tUS\tNone\n"
+      }
+    },
+    "gdelt": {
+      "status": "cached",
+      "fresh": false,
+      "http_status": 200,
+      "article_count": 9,
+      "articles": [
+        {
+          "url": "https://www.ksut.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+          "url_mobile": "https://www.ksut.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe?_amp=true",
+          "title": "A new cold war : hackers target fridges across the globe",
+          "seendate": "20261103T111500Z",
+          "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+          "domain": "ksut.org",
+          "language": "English",
+          "sourcecountry": "United States"
+        },
+        {
+          "url": "https://www.wcsufm.org/latest-from-npr/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+          "url_mobile": "https://www.wcsufm.org/latest-from-npr/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe?_amp=true",
+          "title": "A new cold war : hackers target fridges across the globe",
+          "seendate": "20261103T111500Z",
+          "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+          "domain": "wcsufm.org",
+          "language": "English",
+          "sourcecountry": "United States"
+        },
+        {
+          "url": "https://www.northernpublicradio.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+          "url_mobile": "",
+          "title": "A new cold war : hackers target fridges across the globe",
+          "seendate": "20261103T111500Z",
+          "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+          "domain": "northernpublicradio.org",
+          "language": "English",
+          "sourcecountry": "United States"
+        },
+        {
+          "url": "https://www.aspenpublicradio.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+          "url_mobile": "",
+          "title": "A new cold war : hackers target fridges across the globe",
+          "seendate": "20261103T111500Z",
+          "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+          "domain": "aspenpublicradio.org",
+          "language": "English",
+          "sourcecountry": "United States"
+        },
+        {
+          "url": "https://www.ksmu.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+          "url_mobile": "https://www.ksmu.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe?_amp=true",
+          "title": "A new cold war : hackers target fridges across the globe",
+          "seendate": "20261103T111500Z",
+          "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+          "domain": "ksmu.org",
+          "language": "English",
+          "sourcecountry": "United States"
+        },
+        {
+          "url": "https://www.kunc.org/npr-news/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+          "url_mobile": "",
+          "title": "A new cold war : hackers target fridges across the globe",
+          "seendate": "20261103T111500Z",
+          "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+          "domain": "kunc.org",
+          "language": "English",
+          "sourcecountry": "United States"
+        },
+        {
+          "url": "https://finance.eastmoney.com/a/202611043920707358.html",
+          "url_mobile": "",
+          "title": "国际金融要情 | （ 周三 2026 . 11 . 4 ） _ 东方财富网",
+          "seendate": "20261104T013000Z",
+          "socialimage": "",
+          "domain": "finance.eastmoney.com",
+          "language": "Chinese",
+          "sourcecountry": "China"
+        },
+        {
+          "url": "https://arminfo.info/full_news.php?id=105489",
+          "url_mobile": "",
+          "title": "Arminfo : Репортеры без границ обнародовали Хищников свободы прессы 2026 года",
+          "seendate": "20261103T111500Z",
+          "socialimage": "https://www.arminfo.info/mcgallery/20261103092628.jpg",
+          "domain": "arminfo.info",
+          "language": "Russian",
+          "sourcecountry": "Armenia"
+        },
+        {
+          "url": "https://www.stcatharinesstandard.ca/politics/federal/harper-s-new-memoir-revisits-carney-rivalry-poilievre-and-a-day-of-fear-on-the-hill/article_a79194a5-a44e-5ee6-a208-0d6b64cf7725.html",
+          "url_mobile": "",
+          "title": "Harper new memoir disputes Carney finance job claim",
+          "seendate": "20261103T111500Z",
+          "socialimage": "https://bloximages.chicago2.vip.townnews.com/stcatharinesstandard.ca/content/tncms/assets/v3/editorial/c/1b/c1b8a7fc-8058-5e0f-a893-c253170d238e/6ae93827b0adf.image.jpg?crop=1171%2C615%2C0%2C577",
+          "domain": "stcatharinesstandard.ca",
+          "language": "English",
+          "sourcecountry": "Canada"
+        }
+      ],
+      "topics": {
+        "cyber": [
+          {
+            "url": "https://www.ksut.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+            "url_mobile": "https://www.ksut.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe?_amp=true",
+            "title": "A new cold war : hackers target fridges across the globe",
+            "seendate": "20261103T111500Z",
+            "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+            "domain": "ksut.org",
+            "language": "English",
+            "sourcecountry": "United States"
+          },
+          {
+            "url": "https://www.wcsufm.org/latest-from-npr/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+            "url_mobile": "https://www.wcsufm.org/latest-from-npr/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe?_amp=true",
+            "title": "A new cold war : hackers target fridges across the globe",
+            "seendate": "20261103T111500Z",
+            "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+            "domain": "wcsufm.org",
+            "language": "English",
+            "sourcecountry": "United States"
+          },
+          {
+            "url": "https://www.northernpublicradio.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+            "url_mobile": "",
+            "title": "A new cold war : hackers target fridges across the globe",
+            "seendate": "20261103T111500Z",
+            "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+            "domain": "northernpublicradio.org",
+            "language": "English",
+            "sourcecountry": "United States"
+          },
+          {
+            "url": "https://www.aspenpublicradio.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+            "url_mobile": "",
+            "title": "A new cold war : hackers target fridges across the globe",
+            "seendate": "20261103T111500Z",
+            "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+            "domain": "aspenpublicradio.org",
+            "language": "English",
+            "sourcecountry": "United States"
+          },
+          {
+            "url": "https://www.ksmu.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+            "url_mobile": "https://www.ksmu.org/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe?_amp=true",
+            "title": "A new cold war : hackers target fridges across the globe",
+            "seendate": "20261103T111500Z",
+            "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+            "domain": "ksmu.org",
+            "language": "English",
+            "sourcecountry": "United States"
+          },
+          {
+            "url": "https://www.kunc.org/npr-news/2026-11-03/a-new-cold-war-hackers-target-fridges-across-the-globe",
+            "url_mobile": "",
+            "title": "A new cold war : hackers target fridges across the globe",
+            "seendate": "20261103T111500Z",
+            "socialimage": "http://npr-brightspot.s3.amazonaws.com/65/53/b6db7c9b4e3eb5112551e057ae01/gettyimages-2299339600.jpg",
+            "domain": "kunc.org",
+            "language": "English",
+            "sourcecountry": "United States"
+          }
+        ],
+        "connectivity": [],
+        "hacktivism": [
+          {
+            "url": "https://www.stcatharinesstandard.ca/politics/federal/harper-s-new-memoir-revisits-carney-rivalry-poilievre-and-a-day-of-fear-on-the-hill/article_a79194a5-a44e-5ee6-a208-0d6b64cf7725.html",
+            "url_mobile": "",
+            "title": "Harper new memoir disputes Carney finance job claim",
+            "seendate": "20261103T111500Z",
+            "socialimage": "https://bloximages.chicago2.vip.townnews.com/stcatharinesstandard.ca/content/tncms/assets/v3/editorial/c/1b/c1b8a7fc-8058-5e0f-a893-c253170d238e/6ae93827b0adf.image.jpg?crop=1171%2C615%2C0%2C577",
+            "domain": "stcatharinesstandard.ca",
+            "language": "English",
+            "sourcecountry": "Canada"
+          }
+        ]
+      },
+      "cached_from": "2026-11-04_09-01-50.json",
+      "cached_collected_at": "2026-11-04T09:01:50.548395+00:00",
+      "cache_age_hours": 16.41,
+      "cache_reason": "scheduled reuse; fresh GDELT collection is limited to once daily"
+    }
+  }
+}
