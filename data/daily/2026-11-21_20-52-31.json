@@ -1,0 +1,144 @@
+{
+  "project": "Cyber Conflict Watch",
+  "version": "0.3.0",
+  "collected_at": "2026-11-21T20:52:31.419537+00:00",
+  "collection_health": {
+    "state": "degraded",
+    "successful_checks": 4,
+    "total_checks": 4,
+    "checks": {
+      "dshield_top_ports": true,
+      "dshield_top_ips": true,
+      "dshield_top_networks": true,
+      "gdelt_available": true
+    },
+    "gdelt_fresh": false
+  },
+  "methodology_notice": "Observed infrastructure, news reports and network telemetry do not by themselves establish attribution to a state, group or individual.",
+  "sources": {
+    "dshield": {
+      "top_ports": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "23\ttelnet\tTelnet\n443\thttps\tHTTP protocol over TLS SSL\n22\tssh\tSSH Remote Login Protocol\n80\twww\tWorld Wide Web HTTP\n8080\thttp-alt\tHTTP Alternate (see port 80)\n2222\tssh\talternative ssh (Cowrie)\n16767\t---\t---\n445\tmicrosoft-ds\tWin2k+ Server Message Block\n8000\tirdmi\tiRDMI\n54321\tBackOrifice2000\t[trojan] Back Orifice 2000\n"
+      },
+      "top_ips": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "23.94.68.19\t23-94-68-19-host.colocrossing.com.\n79.124.62.230\thosting-by.4cloud.mobi.\n204.76.203.212\thosted-by.pfcloud.io.\n79.124.62.134\thosting-by.4cloud.mobi.\n207.180.192.205\tm11005.contaboserver.net.\n79.124.62.126\thosting-by.4cloud.mobi.\n207.180.192.206\tm11006.contaboserver.net.\n5.189.160.21\tm4321.contaboserver.net.\n173.249.33.72\tm11372.contaboserver.net.\n193.46.255.51\thostingmailto200.statics.servermail.org.\n173.249.4.73\tm5483.contaboserver.net.\n62.167.236.39\t62-167-236-39.static.adslpremium.ch.\n89.248.163.200\trecyber.net.\n177.129.99.94\tmail.oticasvisao.net.br.\n194.180.49.218\tTIMEOUT\n"
+      },
+      "top_networks": {
+        "status": "ok",
+        "http_status": 200,
+        "data": "#\n#   DShield.org Recommended Block List \n#    (c) $year DShield.org\n#   some rights reserved. Details http://creativecommons.org/licenses/by-nc-sa/2.5/\n#   use on your own risk. No warranties implied.\n#   primary URL: https://feeds.dshield.org/block.txt\n#     PGP Sign.: https://feeds.dshield.org/block.txt.asc\n#\n#   comments: systems@isc.sans.edu\n#    updated: 2026-11-21T20:00:26.743646\n#   \n#    This list summarizes the top 20 attacking class C (/24) subnets\n#   over the last three days. The number of 'attacks' indicates the \n#   number of targets reporting scans from this subnet.\n#\n#\n#    Columns (tab delimited):\n#\n#    (1) start of netblock  \n#    (2) end of netblock\n#    (3) subnet (/24 for class C)\n#    (4) number of targets scanned\n#    (5) name of Network \n#    (6) Country\n#    (7) contact email address\n#\n#    If a range is assigned to multiple users, the first one is listed. \n#     \n64.62.197.0\t64.62.197.255\t24\t320\tHURRICANE\tUS\tabuse@he.net\n45.198.224.0\t45.198.224.255\t24\t319\tOWS\tUS\tCSOC@ontario.ca\n65.49.1.0\t65.49.1.255\t24\t315\tHURRICANE\tUS\tabuse@he.net\n199.165.159.0\t199.165.159.255\t24\t311\t-\t-\t-\n193.163.125.0\t193.163.125.255\t24\t309\tINTERNET-MEASUREMENT\tGB\t>>UNKNOWN<<\n69.5.169.0\t69.5.169.255\t24\t306\tOMNIS\tUS\tabuse@omnis.com\n195.182.16.0\t195.182.16.255\t24\t303\tOT2-AS\tUA\tabuse@omegatelecom.ua\n198.235.24.0\t198.235.24.255\t24\t302\tGOOGLE-CLOUD-PLATFORM\tUS\tNone\n205.210.31.0\t205.210.31.255\t24\t298\tGOOGLE-CLOUD-PLATFORM\tUS\tNone\n147.185.132.0\t147.185.132.255\t24\t297\tGOOGLE-CLOUD-PLATFORM\tUS\tNone\n138.226.239.0\t138.226.239.255\t24\t296\t-\t-\t-\n151.243.11.0\t151.243.11.255\t24\t296\tRASANA\tIR\tabuse@rasana.net\n193.47.62.0\t193.47.62.255\t24\t295\tASN-QUADRANET-GLOBAL\tUS\tsupport@quadranet.com\n156.225.1.0\t156.225.1.255\t24\t294\tOCTL-AS-AP OceanBlue Cloud Technology Limited\tHK\tsam.yang@oceanbluecloud.com\n172.110.223.0\t172.110.223.255\t24\t294\t-\t-\t-\n45.156.129.0\t45.156.129.255\t24\t292\tAS-BITSIGHT\tPT\t>>UNKNOWN<<\n160.119.71.0\t160.119.71.255\t24\t291\t-\t-\t-\n66.132.159.0\t66.132.159.255\t24\t290\t-\t-\t-\n66.132.224.0\t66.132.224.255\t24\t289\t-\t-\t-\n91.196.152.0\t91.196.152.255\t24\t288\tATT-INTERNET4\tUS\tabuse@att.net\n"
+      }
+    },
+    "gdelt": {
+      "status": "cached",
+      "fresh": false,
+      "http_status": 200,
+      "article_count": 9,
+      "articles": [
+        {
+          "url": "https://world.qianlong.com/2026/1120/8753531.shtml",
+          "url_mobile": "",
+          "title": "联合国调查 ： 全球电子政务水平提升但地区差距明显",
+          "seendate": "20261120T064500Z",
+          "socialimage": "",
+          "domain": "world.qianlong.com",
+          "language": "Chinese",
+          "sourcecountry": "China"
+        },
+        {
+          "url": "https://technews.tw/2026/11/20/scientists-reveal-why-human-consciousness-may-be-beyond-the-reach-of-ai/",
+          "url_mobile": "",
+          "title": "以色列學者提出記憶化學理論 ， 人類意識恐非 AI 算力可複製",
+          "seendate": "20261120T001500Z",
+          "socialimage": "https://img.technews.tw/wp-content/uploads/2017/12/28142340/shutterstock_546129427.jpg",
+          "domain": "technews.tw",
+          "language": "Chinese",
+          "sourcecountry": "Taiwan"
+        },
+        {
+          "url": "https://www.alanba.com.kw/1385785/",
+          "url_mobile": "",
+          "title": "زين الأولى إقليميا وضمن فئة القادة في مؤشر",
+          "seendate": "20261119T233000Z",
+          "socialimage": "https://media.alanba.com.kw/articlefiles/2026/11/1385785-1.jpg",
+          "domain": "alanba.com.kw",
+          "language": "Arabic",
+          "sourcecountry": "Kuwait"
+        },
+        {
+          "url": "https://tribune.com.pk/story/2641284/pakistan-asean-pledge-deeper-trade-ties",
+          "url_mobile": "",
+          "title": "Pakistan , ASEAN pledge deeper trade ties",
+          "seendate": "20261120T064500Z",
+          "socialimage": "https://i.tribune.com.pk/media/images/dddd1795133728-0/dddd1795133728-0-640x480.webp",
+          "domain": "tribune.com.pk",
+          "language": "English",
+          "sourcecountry": "Pakistan"
+        },
+        {
+          "url": "https://www.ddaily.co.kr:443/page/view/2026112009172510172",
+          "url_mobile": "http://m.ddaily.co.kr",
+          "title": "PHP 고위험 취약점 또 발견 … 최고 등급  치명적  7건 포함",
+          "seendate": "20261120T023000Z",
+          "socialimage": "https://www.ddaily.co.kr:443/photos/2026/11/20/2026112009065449361_l.jpg",
+          "domain": "ddaily.co.kr",
+          "language": "Korean",
+          "sourcecountry": "South Korea"
+        },
+        {
+          "url": "https://www.mynet.com/haber/iran-devrim-muhafizlari-ordusu-abd-nin-olasi-kara-saldirisina-haziriz-110107321903",
+          "url_mobile": "",
+          "title": "İran Devrim Muhafızları Ordusu :  ABDnin olası kara saldırısına hazırız  ",
+          "seendate": "20261119T193000Z",
+          "socialimage": "https://imgrosetta.mynet.com.tr/file/24226060/24226060-1200x675.jpg",
+          "domain": "mynet.com",
+          "language": "Turkish",
+          "sourcecountry": "Turkey"
+        },
+        {
+          "url": "https://www.sozcu.com.tr/iran-dan-abd-ye-kara-harekati-mesaji-p382893",
+          "url_mobile": "https://www.sozcu.com.tr/amp/iran-dan-abd-ye-kara-harekati-mesaji-p382893",
+          "title": "İrandan ABDye kara harekâtı mesajı",
+          "seendate": "20261120T061500Z",
+          "socialimage": "https://sozcu01.sozcucdn.com/sozcu/production/uploads/images/2026/11/irandanabdyemesajhicbirsaldiricevapsizkalmayacakjpg-23RbwaDA90aGaU9oYq8YTA.jpg?&mode=crop&scale=both",
+          "domain": "sozcu.com.tr",
+          "language": "Turkish",
+          "sourcecountry": "Turkey"
+        },
+        {
+          "url": "https://www.ammonnews.net/article/1046506",
+          "url_mobile": "",
+          "title": "ترامب : شي وبوتين يرغبان في إنهاء حرب إيران وأبلغنا طهران بذلك | العالم",
+          "seendate": "20261120T001500Z",
+          "socialimage": "https://www.ammonnews.net/image.php?token=1baacd5f88875b1496beebdbf5af3040&size=",
+          "domain": "ammonnews.net",
+          "language": "Arabic",
+          "sourcecountry": "Jordan"
+        },
+        {
+          "url": "https://www.enikos.gr/politics/evangelos-venizelos-meso-navtex-de-ginetai-oriothetisi/2679675/",
+          "url_mobile": "https://www.enikos.gr/politics/evangelos-venizelos-meso-navtex-de-ginetai-oriothetisi/2679675/amp/",
+          "title": "Ευάγγελος Βενιζέλος : « Μέσω NAVTEX δε γίνεται οριοθέτηση » ",
+          "seendate": "20261120T023000Z",
+          "socialimage": "https://www.enikos.gr/wp-content/uploads/2026/11/Venizelos-1.jpg",
+          "domain": "enikos.gr",
+          "language": "Greek",
+          "sourcecountry": "Greece"
+        }
+      ],
+      "topics": {
+        "cyber": [],
+        "connectivity": [],
+        "hacktivism": []
+      },
+      "cached_from": "2026-11-20_09-56-29.json",
+      "cached_collected_at": "2026-11-20T09:56:29.692461+00:00",
+      "cache_age_hours": 34.93,
+      "cache_reason": "scheduled reuse; fresh GDELT collection is limited to once daily"
+    }
+  }
+}
